@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Word Counter Online: Free Word & Character Count Tool</title>
+<meta name="description" content="Free online word counter: count words, characters, sentences and paragraphs instantly, plus reading time. Runs in your browser, nothing is uploaded.">
+<link rel="canonical" href="https://wordcounter.globrik.com/">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#2563eb">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Word Counter Online: Free Word & Character Count Tool">
+<meta property="og:description" content="Free online word counter and character counter. Words, characters, sentences, paragraphs, reading time and top keywords as you type.">
+<meta property="og:url" content="https://wordcounter.globrik.com/">
+<meta property="og:site_name" content="Globrik">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Word Counter Online: Free Word & Character Count Tool">
+<meta name="twitter:description" content="Free online word counter and character counter. Words, characters, sentences, paragraphs, reading time and top keywords as you type.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Ctext x='32' y='42' font-size='26' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3E123%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebApplication","name":"Word & Character Counter","description":"Free online word counter and character counter. Count words, characters, sentences, paragraphs, reading time and top keywords in your browser.","url":"https://wordcounter.globrik.com/","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://globrik.com/"},{"@type":"ListItem","position":2,"name":"Word & Character Counter","item":"https://wordcounter.globrik.com/"}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is this word counter free?","acceptedAnswer":{"@type":"Answer","text":"Yes. This word counter is completely free, with no signup, no trial and no limit on how many times you use it. There's no watermark and no ads inside the tool. Paste your text, read the counts, and copy or download the text if you need it. Nothing needs to be installed."}},
+{"@type":"Question","name":"Is my text safe? Is it uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"Your text is processed in your browser and is never uploaded. The page counts words with JavaScript on your device. It doesn't send your text to a server or save it in cookies or local storage. Closing or refreshing the tab clears the box, so keep a copy of anything you need."}},
+{"@type":"Question","name":"How does the tool count words?","acceptedAnswer":{"@type":"Answer","text":"It splits your text at spaces and line breaks, then counts every piece that contains at least one letter or number. So well-known and don't count as one word each, while a lone dash or emoji doesn't count. Numbers such as 2026 count as words, the way most word processors treat them."}},
+{"@type":"Question","name":"What is the difference between characters with and without spaces?","acceptedAnswer":{"@type":"Answer","text":"Characters with spaces counts everything you typed, including spaces, tabs and line breaks. Characters without spaces counts only visible characters. Use the first for limits on social posts and texts, and the second when an assignment or translation job asks for characters excluding spaces. Most emoji count as one character, but combined emoji can count as several."}},
+{"@type":"Question","name":"How is reading time calculated?","acceptedAnswer":{"@type":"Answer","text":"Reading time divides your word count by a reading speed, 200 words per minute by default. Speaking time uses 130 words per minute. You can edit both speeds, because people read and talk at different paces. Treat the result as an estimate for planning, not a precise measurement."}},
+{"@type":"Question","name":"Is there a limit on how much text I can count?","acceptedAnswer":{"@type":"Answer","text":"You can paste or type as much as your browser handles comfortably. Text files you load are limited to 2 MB, which is roughly two million plain English characters. Very large text may make the page respond more slowly on older phones, because the stats update whenever the text changes."}},
+{"@type":"Question","name":"Does it count words in other languages?","acceptedAnswer":{"@type":"Answer","text":"It works best with languages that put spaces between words, such as English, Spanish, French and German. Chinese, Japanese and Thai are usually written without spaces, so a run of characters counts as a single word. The character counts stay accurate for those languages, so use them instead."}},
+{"@type":"Question","name":"Does it work on my phone?","acceptedAnswer":{"@type":"Answer","text":"Yes. The layout is built for small screens first, the buttons are at least 44 pixels tall, and the stats update as you type or paste. Use the Paste text button to bring in what you copied, or long-press the box to paste. Everything runs in your phone's browser."}},
+{"@type":"Question","name":"Does it work offline?","acceptedAnswer":{"@type":"Answer","text":"Yes, once the page has loaded. Counting runs in your browser, so it keeps working if your connection drops. You need to be online the first time you open the page, and the tool doesn't install itself as an offline app. Reloading the page while offline may not work."}},
+{"@type":"Question","name":"Why does my word count differ from Microsoft Word or Google Docs?","acceptedAnswer":{"@type":"Answer","text":"Counting rules differ. This tool counts any space-separated piece that contains a letter or number. Word processors may count standalone dashes or symbols, treat hyphenated or slashed terms differently, or include footnotes and headers. A difference of a few words is normal. For submissions, trust the count your recipient uses."}}
+]}]}
+</script>
+<style>
+:root{--bg:#f8fafc;--card:#fff;--tx:#0f172a;--mu:#475569;--br:#cbd5e1;--ac:#1d4ed8;--act:#fff;--soft:#eff6ff;--ok:#166534;--er:#b91c1c}
+@media(prefers-color-scheme:dark){:root{--bg:#0b1220;--card:#111a2e;--tx:#e8eefc;--mu:#a5b4cf;--br:#2b3a57;--ac:#60a5fa;--act:#0b1220;--soft:#16233d;--ok:#86efac;--er:#fca5a5}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+a{color:var(--ac)}
+a:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+.w{max-width:920px;margin:0 auto;padding:0 16px}
+header{background:var(--card);border-bottom:1px solid var(--br)}
+header .w{display:flex;flex-wrap:wrap;align-items:center;gap:4px 22px;padding:8px 16px}
+.logo{font-weight:800;font-size:1.35rem;color:var(--tx);text-decoration:none;padding:8px 0}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:0 16px}
+nav a{display:inline-block;padding:10px 0;font-size:.95rem}
+h1{font-size:clamp(1.8rem,5vw,2.5rem);line-height:1.2;margin:28px 0 8px}
+h2{font-size:1.55rem;margin:44px 0 10px;line-height:1.3}
+h3{font-size:1.15rem;margin:24px 0 6px}
+p{margin:0 0 14px}
+.lead{color:var(--mu);font-size:1.1rem;margin:0 0 18px}
+.tool{background:var(--card);border:1px solid var(--br);border-radius:14px;padding:16px}
+label.lb{display:block;font-weight:600;margin-bottom:6px}
+textarea{width:100%;min-height:220px;resize:vertical;padding:12px;border:2px solid var(--br);border-radius:10px;background:var(--bg);color:var(--tx);font:inherit;line-height:1.5}
+textarea.over{border-color:var(--ac);border-style:dashed;background:var(--soft)}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+button{min-height:44px;min-width:44px;padding:8px 14px;border:1px solid var(--br);border-radius:10px;background:var(--card);color:var(--tx);font:inherit;font-size:.95rem;cursor:pointer}
+button:hover{border-color:var(--ac)}
+button.pri{background:var(--ac);color:var(--act);border-color:var(--ac);font-weight:600}
+#status{min-height:1.6em;margin:8px 0 0;font-weight:600}
+#status.ok{color:var(--ok)}#status.err{color:var(--er)}
+.hint{color:var(--mu);font-size:.9rem;margin:6px 0 0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0 0}
+@media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{--c:#2563eb;position:relative;border:1px solid var(--br);border-top:4px solid var(--c);border-radius:14px;padding:12px 14px;background:var(--card);background:linear-gradient(145deg,color-mix(in srgb,var(--c) 16%,var(--card)),var(--card) 75%);box-shadow:0 2px 8px rgba(15,23,42,.08);transition:transform .15s,box-shadow .15s}
+.stat:hover{transform:translateY(-2px);box-shadow:0 6px 14px rgba(15,23,42,.14)}
+.stat b{display:block;font-size:1.6rem;line-height:1.2;overflow-wrap:anywhere;color:var(--c)}
+.stat span{display:block;margin-top:2px;color:var(--mu);font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.stat.big b{font-size:2.1rem}
+.stat:nth-child(1){--c:#2563eb}
+.stat:nth-child(2){--c:#7c3aed}
+.stat:nth-child(3){--c:#0d9488}
+.stat:nth-child(4){--c:#ea580c}
+.stat:nth-child(5){--c:#db2777}
+.stat:nth-child(6){--c:#475569}
+.stat:nth-child(7){--c:#16a34a}
+.stat:nth-child(8){--c:#0891b2}
+@media(prefers-color-scheme:dark){.stat{box-shadow:none}.stat:nth-child(1){--c:#60a5fa}.stat:nth-child(2){--c:#a78bfa}.stat:nth-child(3){--c:#2dd4bf}.stat:nth-child(4){--c:#fb923c}.stat:nth-child(5){--c:#f472b6}.stat:nth-child(6){--c:#cbd5e1}.stat:nth-child(7){--c:#4ade80}.stat:nth-child(8){--c:#22d3ee}}
+.more{display:flex;flex-wrap:wrap;gap:6px 24px;margin:12px 0 0;color:var(--mu);font-size:.95rem}
+.more strong{color:var(--tx)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:18px}
+.two h2{font-size:1.05rem;margin:0 0 6px}
+ul.lim{list-style:none;margin:0;padding:0;font-size:.95rem}
+ul.lim li{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px solid var(--br);margin:0}
+ul.lim .over{color:var(--er);font-weight:600}
+.kw{min-height:200px;margin:0}
+.kw table{min-width:0;font-size:.93rem}
+.spd{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;margin-top:16px;padding-top:14px;border-top:1px solid var(--br);font-size:.95rem}
+.spd label{display:flex;align-items:center;gap:8px}
+input[type=number]{width:84px;min-height:44px;padding:8px 10px;border:2px solid var(--br);border-radius:10px;background:var(--bg);color:var(--tx);font:inherit}
+.box{background:var(--soft);border:1px solid var(--br);border-left:5px solid var(--ac);border-radius:10px;padding:16px;margin:26px 0}
+.box h2{margin:0 0 8px;font-size:1.25rem}
+.box ol{margin:8px 0 0;padding-left:22px}
+.toc{background:var(--card);border:1px solid var(--br);border-radius:10px;padding:12px 16px;margin:22px 0}
+.toc strong{display:block;margin-bottom:4px}
+.toc ol{margin:0;padding-left:20px;columns:2;column-gap:28px}
+.toc a{display:inline-block;padding:4px 0}
+@media(max-width:600px){.toc ol{columns:1}}
+ul,ol{padding-left:22px}li{margin-bottom:6px}
+.tw{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;min-width:480px;background:var(--card);font-size:.96rem}
+th,td{border:1px solid var(--br);padding:9px 11px;text-align:left;vertical-align:top}
+th{background:var(--soft)}
+details{background:var(--card);border:1px solid var(--br);border-radius:10px;margin:10px 0;padding:0 14px}
+summary{cursor:pointer;font-weight:600;padding:13px 0;min-height:44px}
+details p{margin:0 0 14px}
+dl{margin:0}dt{font-weight:700;margin-top:12px}dd{margin:2px 0 0}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em}
+.rel{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;padding:0;list-style:none}
+.rel li{margin:0}
+.rel a{display:block;padding:12px 14px;border:1px solid var(--br);border-radius:10px;background:var(--card);text-decoration:none;font-weight:600}
+.rel span{display:block;font-weight:400;color:var(--mu);font-size:.9rem}
+footer{margin-top:50px;background:var(--card);border-top:1px solid var(--br);padding:22px 0 30px;font-size:.93rem;color:var(--mu)}
+footer ul{list-style:none;margin:0 0 12px;padding:0;display:flex;flex-wrap:wrap;gap:0 18px}
+footer a{display:inline-block;padding:10px 0}
+.vh{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header>
+<div class="w">
+<a class="logo" href="https://globrik.com/">Globrik</a>
+<nav aria-label="Globrik tools">
+<ul>
+<li><a href="https://caseconverter.globrik.com/">Case Converter</a></li>
+<li><a href="https://removeduplicatelines.globrik.com/">Remove Duplicate Lines</a></li>
+<li><a href="https://diffchecker.globrik.com/">Text Diff Checker</a></li>
+<li><a href="https://loremipsum.globrik.com/">Lorem Ipsum Generator</a></li>
+<li><a href="https://onlinenotepad.globrik.com/">Online Notepad</a></li>
+<li><a href="https://typingtest.globrik.com/">Typing Speed Test</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main class="w">
+<article>
+<h1>Word Counter</h1>
+<p class="lead">Count words, characters, sentences and paragraphs as you type. A free online word counter and character counter that runs in your browser.</p>
+
+<section class="tool" aria-label="Word and character counter tool">
+<label class="lb" for="txt">Your text</label>
+<textarea id="txt" spellcheck="false" placeholder="Type or paste your text here, or drop a .txt file onto this box. Counts update as you go."></textarea>
+<div class="row">
+<button type="button" id="paste" class="pri">Paste text</button>
+<button type="button" id="copy">Copy text</button>
+<button type="button" id="dl">Download .txt</button>
+<button type="button" id="pick">Choose a text file</button>
+<button type="button" id="reset">Reset / Start over</button>
+<input type="file" id="file" accept=".txt,.md,.csv,.json,.html,.htm,text/plain" hidden aria-label="Choose a text file to load">
+</div>
+<div id="status" role="status" aria-live="polite"></div>
+<p class="hint">Your text is processed in your browser and never uploaded. Dropped files: .txt, .md, .csv, .json or .html, up to 2 MB.</p>
+<div id="sum" class="vh" role="status" aria-live="polite"></div>
+
+<div class="stats" aria-label="Counts">
+<div class="stat big"><b id="s-words">0</b><span>Words</span></div>
+<div class="stat big"><b id="s-chars">0</b><span>Characters</span></div>
+<div class="stat"><b id="s-nosp">0</b><span>Characters (no spaces)</span></div>
+<div class="stat"><b id="s-sent">0</b><span>Sentences</span></div>
+<div class="stat"><b id="s-para">0</b><span>Paragraphs</span></div>
+<div class="stat"><b id="s-lines">0</b><span>Lines</span></div>
+<div class="stat"><b id="s-read">0 sec</b><span>Reading time</span></div>
+<div class="stat"><b id="s-speak">0 sec</b><span>Speaking time</span></div>
+</div>
+<div class="more">
+<span>Average word length: <strong id="s-avg">0</strong></span>
+<span>Longest word: <strong id="s-long">-</strong></span>
+</div>
+
+<div class="two">
+<div>
+<h2>Common character limits</h2>
+<ul class="lim" id="lim"></ul>
+<p class="hint">Counts include spaces. These are common guidelines, so confirm the current limit on the platform you use.</p>
+</div>
+<div>
+<h2>Top repeated words</h2>
+<div class="kw" id="kw"><p class="hint">Words used at least twice appear here, with common filler words left out.</p></div>
+</div>
+</div>
+
+<div class="spd">
+<label for="wpmR">Reading speed <input type="number" id="wpmR" value="200" min="50" max="1000" inputmode="numeric"> words/min</label>
+<label for="wpmS">Speaking speed <input type="number" id="wpmS" value="130" min="50" max="400" inputmode="numeric"> words/min</label>
+</div>
+</section>
+
+<nav class="toc" aria-label="On this page">
+<strong>On this page</strong>
+<ol>
+<li><a href="#quick">Quick answer</a></li>
+<li><a href="#why">Why use this word counter</a></li>
+<li><a href="#guide">Step-by-step guide</a></li>
+<li><a href="#specs">Counting rules and limits</a></li>
+<li><a href="#uses">Use cases</a></li>
+<li><a href="#features">Key features</a></li>
+<li><a href="#tips">Expert tips and common mistakes</a></li>
+<li><a href="#privacy">Privacy and security</a></li>
+<li><a href="#compare">Compared with alternatives</a></li>
+<li><a href="#trouble">Troubleshooting</a></li>
+<li><a href="#glossary">Glossary</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ol>
+</nav>
+
+<section class="box" id="quick" aria-labelledby="quick-h">
+<h2 id="quick-h">Quick answer: how to count words online</h2>
+<p>To get a word count, paste or type your text into the box above. The word counter updates instantly, showing words, characters with and without spaces, sentences, paragraphs, reading time and speaking time. Use the character limits panel to check a social post or meta description. Everything runs in your browser, so your text stays on your device.</p>
+<ol>
+<li>Paste or type your text, or drop a text file onto the box.</li>
+<li>Read the word and character counts as they update.</li>
+<li>Check the limits panel and the repeated words list.</li>
+<li>Copy or download your text, or click Reset to start fresh.</li>
+</ol>
+</section>
+
+<section aria-labelledby="intro-h">
+<h2 id="intro-h" class="vh">Introduction</h2>
+<p>This word counter gives you a live word count, character count, sentence count and paragraph count for any text you paste. It also estimates reading and speaking time, checks your length against common limits like a 280-character post, and lists the words you repeat most. Writers, students and marketers use it to hit a target length without guessing.</p>
+<p>There's nothing to install and no account to create. The counting happens on your device, and you can load a plain text file if your draft isn't on the clipboard.</p>
+</section>
+
+<section id="why" aria-labelledby="why-h">
+<h2 id="why-h">Why use this free word counter</h2>
+<p>Here's what's true about this tool:</p>
+<ul>
+<li><strong>Live results.</strong> Counts update as you type or paste, so there's no Count button to hunt for.</li>
+<li><strong>More than words.</strong> Characters with and without spaces, sentences, paragraphs, lines, average word length and the longest word are all shown together.</li>
+<li><strong>Reading and speaking time.</strong> Both use editable speeds, so you can match your own pace or your audience.</li>
+<li><strong>Limit checks.</strong> See how many characters are left for an X post, a meta title, a meta description, a text message or an Instagram caption.</li>
+<li><strong>Repeated words.</strong> Spot overused words in a draft with a top-ten list that ignores common filler words.</li>
+<li><strong>Private by design.</strong> Your text is never uploaded, and the page makes no network requests while you count.</li>
+<li><strong>No signup, no word cap tied to a plan, no watermark.</strong></li>
+</ul>
+</section>
+
+<section id="guide" aria-labelledby="guide-h">
+<h2 id="guide-h">How to count words and characters: step-by-step guide</h2>
+<h3>Step 1: Add your text</h3>
+<p>Click inside the box and paste with Ctrl+V (Cmd+V on a Mac), or press Paste text to pull in whatever is on your clipboard. You can also type directly, drag a text file onto the box, or click Choose a text file. Counting begins as soon as the text changes.</p>
+<h3>Step 2: Read the main counts</h3>
+<p>The two highlighted cards show words and characters. Characters include spaces, tabs and line breaks. The next card shows characters without spaces, which some assignments and translation jobs ask for.</p>
+<h3>Step 3: Check structure and timing</h3>
+<p>Sentences, paragraphs and lines tell you how the text is built. Reading time and speaking time help you plan a speech, a video script or a newsletter. Change the speeds at the bottom if your audience reads slower or faster than the defaults.</p>
+<h3>Step 4: Compare against a limit</h3>
+<p>The limits panel shows how many characters you've used against each guideline and how many are left, or how far over you are. If you're over, trim the text and watch the number change.</p>
+<h3>Step 5: Review repeated words, then copy or download</h3>
+<p>The repeated words list shows words you use at least twice. When you're done, press Copy text or Download .txt. Reset / Start over clears the box and restores the default speeds.</p>
+<h3>Tips for best results</h3>
+<ul>
+<li>Paste only the part that counts toward your limit. Leave out references, headers or captions if they don't count.</li>
+<li>If you're matching a requirement, use the same counting method as the person who set it.</li>
+<li>Need to change capitalization after editing? The <a href="https://caseconverter.globrik.com/">Case Converter</a> handles uppercase, lowercase and title case.</li>
+</ul>
+<p>If you'd like background on how word counts are defined, Wikipedia's article on <a href="https://en.wikipedia.org/wiki/Word_count" rel="noopener">word count</a> explains the common conventions.</p>
+</section>
+
+<section id="specs" aria-labelledby="specs-h">
+<h2 id="specs-h">Counting rules, formats and limits</h2>
+<div class="tw"><table>
+<thead><tr><th>Item</th><th>How this tool counts</th></tr></thead>
+<tbody>
+<tr><td>Words</td><td>Text is split at spaces and line breaks. Each piece containing at least one letter or number counts as one word. Standalone symbols, dashes and most emoji don't count.</td></tr>
+<tr><td>Hyphenated and apostrophe words</td><td>well-known and don't each count as one word.</td></tr>
+<tr><td>Characters</td><td>Every character you typed, including spaces, tabs and line breaks. Counted as Unicode code points, so most emoji count as one.</td></tr>
+<tr><td>Characters (no spaces)</td><td>The same count with all whitespace removed.</td></tr>
+<tr><td>Sentences</td><td>Text ending in a period, exclamation mark, question mark or ellipsis followed by a space or the end of the text. Decimals such as 3.5 don't split a sentence. Abbreviations like e.g. may add an extra sentence, so treat this number as an estimate.</td></tr>
+<tr><td>Paragraphs</td><td>Every non-empty line counts as one paragraph.</td></tr>
+<tr><td>Lines</td><td>Every line, including blank ones.</td></tr>
+<tr><td>Reading time</td><td>Words divided by your reading speed. Default 200 words per minute.</td></tr>
+<tr><td>Speaking time</td><td>Words divided by your speaking speed. Default 130 words per minute.</td></tr>
+<tr><td>Repeated words</td><td>Top ten words of three or more letters used at least twice, excluding common filler words and plain numbers.</td></tr>
+<tr><td>Files</td><td>.txt, .md, .csv, .json, .html and .htm, up to 2 MB. Word, PDF and image files aren't supported.</td></tr>
+<tr><td>Typed or pasted text</td><td>No fixed limit. Your browser's memory is the ceiling.</td></tr>
+<tr><td>Not supported</td><td>Word-by-word segmentation for Chinese, Japanese and Thai, spelling or grammar checks, and counting inside Word or PDF files.</td></tr>
+</tbody></table></div>
+</section>
+
+<section id="uses" aria-labelledby="uses-h">
+<h2 id="uses-h">Who uses a word counter: practical use cases</h2>
+<ul>
+<li><strong>Students:</strong> stay inside an essay's word range before submitting, and check a scholarship statement against its character limit.</li>
+<li><strong>Bloggers and journalists:</strong> hit a target length for an article and estimate how long it takes to read.</li>
+<li><strong>SEO and content marketers:</strong> check meta titles and descriptions, and look for overused terms in a draft.</li>
+<li><strong>Social media managers:</strong> trim a caption to fit an X post or an Instagram caption.</li>
+<li><strong>Translators and editors:</strong> estimate the size of a job when pricing is per word or per character.</li>
+<li><strong>Job seekers:</strong> keep a cover letter or an application answer within the box limit.</li>
+<li><strong>Speakers and video creators:</strong> turn a script into a timing estimate for a talk, a podcast or a video.</li>
+<li><strong>UX writers and developers:</strong> keep button labels and error messages within a character budget.</li>
+</ul>
+</section>
+
+<section id="features" aria-labelledby="features-h">
+<h2 id="features-h">Key features and benefits</h2>
+<ul>
+<li>Live word count and character count with and without spaces.</li>
+<li>Sentence, paragraph and line counts.</li>
+<li>Reading time and speaking time with editable speeds.</li>
+<li>Character limit checks for X posts, meta titles, meta descriptions, text messages and Instagram captions.</li>
+<li>Top repeated words with a share of your total words.</li>
+<li>Paste, copy, download and file loading buttons.</li>
+<li>Keyboard accessible, labeled controls, large tap targets and a screen-reader summary.</li>
+<li>Light theme with automatic dark mode.</li>
+<li>Friendly messages for unsupported or oversized files.</li>
+<li>No signup and no external requests.</li>
+</ul>
+</section>
+
+<section id="tips" aria-labelledby="tips-h">
+<h2 id="tips-h">Expert tips and common mistakes</h2>
+<h3>Know what counts toward the limit</h3>
+<p>Many word limits exclude the title, references, footnotes or captions. Many include them. Read the brief, then paste only the text that counts. A few extra seconds here prevents a rejected submission.</p>
+<h3>Different tools count differently</h3>
+<p>A word processor, a learning platform and this page can each give slightly different totals, mostly because of dashes, slashes and symbols. If the person receiving your text will check it with their own tool, check the number there as well.</p>
+<h3>Characters with spaces vs. without</h3>
+<p>Social platforms and text-message limits count spaces. Some translation and academic rules don't. Use the card that matches the rule you're following.</p>
+<h3>Meta descriptions are measured in pixels, not just characters</h3>
+<p>Search engines cut off titles and descriptions by display width, not a fixed character count, so the 60 and 155 guidelines are approximate. Aim a little under them and put your key words early.</p>
+<h3>Text messages can have a smaller limit than you expect</h3>
+<p>A single standard text allows 160 characters, but messages with emoji or non-Latin letters often fall to 70 characters per segment. If your message uses them, leave extra room.</p>
+<h3>Don't chase keyword percentages</h3>
+<p>The repeated words list is for spotting overused terms, not for hitting a magic density. Write for the reader, and use a synonym when one word appears too often.</p>
+<h3>Clean up duplicates before counting</h3>
+<p>If you've pasted a list that repeats lines, the totals will be inflated. Run it through <a href="https://removeduplicatelines.globrik.com/">Remove Duplicate Lines</a> first. If you want to see what changed between two drafts, the <a href="https://diffchecker.globrik.com/">Text Diff Checker</a> shows it line by line.</p>
+</section>
+
+<section id="privacy" aria-labelledby="privacy-h">
+<h2 id="privacy-h">Privacy and security</h2>
+<p>Your text is processed in your browser and is never uploaded. The counting code is plain JavaScript running on your device. The page loads no external scripts, fonts or images, makes no network requests while you count, and doesn't save your text to cookies or local storage. Closing or refreshing the tab clears the box.</p>
+<p>A few honest notes. Your browser or a clipboard manager may keep what you copy or paste, and that's outside this page's control. Browser extensions can read page contents, so use a clean browser profile for sensitive documents. Standard hosting logs may record that the page was visited, but they don't see what you type into the box.</p>
+</section>
+
+<section id="compare" aria-labelledby="compare-h">
+<h2 id="compare-h">This word counter vs. alternatives</h2>
+<p>Every approach has a place. Here's a fair comparison:</p>
+<div class="tw"><table>
+<thead><tr><th>Factor</th><th>This browser tool</th><th>Word processors</th><th>Code and text editors</th><th>Server-based sites</th></tr></thead>
+<tbody>
+<tr><td>Setup</td><td>None, just open the page</td><td>App or account needed</td><td>Editor needed, sometimes an extension</td><td>None</td></tr>
+<tr><td>Where text is processed</td><td>On your device</td><td>On your device or in the cloud</td><td>On your device</td><td>Varies by site</td></tr>
+<tr><td>Words and characters</td><td>Yes, live</td><td>Yes, usually in the status bar</td><td>Often limited</td><td>Yes</td></tr>
+<tr><td>Reading time and limit checks</td><td>Yes</td><td>Reading time is sometimes included</td><td>Rarely</td><td>Varies</td></tr>
+<tr><td>Best for</td><td>Quick checks and snippets</td><td>Long documents you're already writing</td><td>Developers and plain text</td><td>One-off use</td></tr>
+<tr><td>Cost</td><td>Free</td><td>Often a paid suite or free account</td><td>Often free</td><td>Often free with ads</td></tr>
+</tbody></table></div>
+<p>If you're already inside a word processor, its built-in count is the number to trust for that document. This page is faster when you have a snippet, need a character limit check, or want repeated words and timing in one place. For longer drafts you'd rather keep in a browser tab, an <a href="https://onlinenotepad.globrik.com/">Online Notepad</a> pairs well with it.</p>
+</section>
+
+<section id="trouble" aria-labelledby="trouble-h">
+<h2 id="trouble-h">Troubleshooting</h2>
+<h3>The count looks too high or too low</h3>
+<p>Check whether your source includes headers, references or captions you didn't mean to paste. Also remember that rules differ between tools. This one counts space-separated pieces that contain a letter or number.</p>
+<h3>Paste text doesn't work</h3>
+<p>Some browsers block one-click paste. Click inside the box and press Ctrl+V (Cmd+V on a Mac) instead.</p>
+<h3>My file won't load</h3>
+<p>Make sure it's 2 MB or smaller and is a plain text type: .txt, .md, .csv, .json or .html. Word, PDF and image files aren't supported. For those, copy the text out and paste it into the box.</p>
+<h3>Strange characters appear after loading a file</h3>
+<p>The file probably isn't saved as UTF-8. Open it in a text editor, save it with UTF-8 encoding, and load it again.</p>
+<h3>Chinese, Japanese or Thai text shows very few words</h3>
+<p>These languages are usually written without spaces, so a run of characters counts as one word. Use the character counts instead.</p>
+<h3>The sentence count seems off</h3>
+<p>Abbreviations such as e.g. or Dr. can add extra sentence breaks, and text with no end punctuation counts as one sentence. Treat the sentence count as an estimate.</p>
+<h3>The page feels slow with a very large text</h3>
+<p>The stats refresh each time the text changes. Pause for a moment after pasting very large text, or split it into parts.</p>
+<h3>Copy text doesn't work</h3>
+<p>Some browsers block clipboard access in certain settings. Click inside the box, press Ctrl+A (Cmd+A on a Mac), and copy with the keyboard.</p>
+</section>
+
+<section id="glossary" aria-labelledby="glossary-h">
+<h2 id="glossary-h">Glossary</h2>
+<dl>
+<dt>Word count</dt><dd>The number of words in a text. Different tools define a word slightly differently.</dd>
+<dt>Character count</dt><dd>The number of characters in a text. It can include or exclude spaces.</dd>
+<dt>Whitespace</dt><dd>Spaces, tabs and line breaks. They separate words and are removed in the no-spaces count.</dd>
+<dt>Code point</dt><dd>A single numbered character in the Unicode standard. This tool counts characters by code points, so most emoji count as one.</dd>
+<dt>Reading time</dt><dd>An estimate of how long a text takes to read silently, found by dividing word count by reading speed.</dd>
+<dt>Speaking time</dt><dd>An estimate of how long a text takes to say aloud. People speak more slowly than they read.</dd>
+<dt>Keyword density</dt><dd>How often a word appears compared with the total words in a text, shown as a percentage.</dd>
+<dt>Stop words</dt><dd>Very common words such as the, and and for. They're left out of the repeated words list.</dd>
+</dl>
+</section>
+
+<section id="faq" aria-labelledby="faq-h">
+<h2 id="faq-h">Frequently asked questions</h2>
+<details><summary>Is this word counter free?</summary><p>Yes. This word counter is completely free, with no signup, no trial and no limit on how many times you use it. There's no watermark and no ads inside the tool. Paste your text, read the counts, and copy or download the text if you need it. Nothing needs to be installed.</p></details>
+<details><summary>Is my text safe? Is it uploaded anywhere?</summary><p>Your text is processed in your browser and is never uploaded. The page counts words with JavaScript on your device. It doesn't send your text to a server or save it in cookies or local storage. Closing or refreshing the tab clears the box, so keep a copy of anything you need.</p></details>
+<details><summary>How does the tool count words?</summary><p>It splits your text at spaces and line breaks, then counts every piece that contains at least one letter or number. So well-known and don't count as one word each, while a lone dash or emoji doesn't count. Numbers such as 2026 count as words, the way most word processors treat them.</p></details>
+<details><summary>What is the difference between characters with and without spaces?</summary><p>Characters with spaces counts everything you typed, including spaces, tabs and line breaks. Characters without spaces counts only visible characters. Use the first for limits on social posts and texts, and the second when an assignment or translation job asks for characters excluding spaces. Most emoji count as one character, but combined emoji can count as several.</p></details>
+<details><summary>How is reading time calculated?</summary><p>Reading time divides your word count by a reading speed, 200 words per minute by default. Speaking time uses 130 words per minute. You can edit both speeds, because people read and talk at different paces. Treat the result as an estimate for planning, not a precise measurement.</p></details>
+<details><summary>Is there a limit on how much text I can count?</summary><p>You can paste or type as much as your browser handles comfortably. Text files you load are limited to 2 MB, which is roughly two million plain English characters. Very large text may make the page respond more slowly on older phones, because the stats update whenever the text changes.</p></details>
+<details><summary>Does it count words in other languages?</summary><p>It works best with languages that put spaces between words, such as English, Spanish, French and German. Chinese, Japanese and Thai are usually written without spaces, so a run of characters counts as a single word. The character counts stay accurate for those languages, so use them instead.</p></details>
+<details><summary>Does it work on my phone?</summary><p>Yes. The layout is built for small screens first, the buttons are at least 44 pixels tall, and the stats update as you type or paste. Use the Paste text button to bring in what you copied, or long-press the box to paste. Everything runs in your phone's browser.</p></details>
+<details><summary>Does it work offline?</summary><p>Yes, once the page has loaded. Counting runs in your browser, so it keeps working if your connection drops. You need to be online the first time you open the page, and the tool doesn't install itself as an offline app. Reloading the page while offline may not work.</p></details>
+<details><summary>Why does my word count differ from Microsoft Word or Google Docs?</summary><p>Counting rules differ. This tool counts any space-separated piece that contains a letter or number. Word processors may count standalone dashes or symbols, treat hyphenated or slashed terms differently, or include footnotes and headers. A difference of a few words is normal. For submissions, trust the count your recipient uses.</p></details>
+</section>
+
+<section aria-labelledby="concl-h">
+<h2 id="concl-h">Check your word count now</h2>
+<p>Hitting the right length shouldn't take guesswork. Paste your draft into this free word counter and see words, characters, reading time and limit checks in one glance. Trim, rewrite and watch the numbers change as you go. Scroll back up to the box, paste your text, and get your word count in seconds. Then try the related tools below for your next editing step.</p>
+</section>
+
+<section aria-labelledby="rel-h">
+<h2 id="rel-h">Related tools</h2>
+<ul class="rel">
+<li><a href="https://caseconverter.globrik.com/">Case Converter<span>Switch text between upper and lower case</span></a></li>
+<li><a href="https://removeduplicatelines.globrik.com/">Remove Duplicate Lines<span>Clean repeated lines from any list</span></a></li>
+<li><a href="https://diffchecker.globrik.com/">Text Diff Checker<span>Compare two versions of a text</span></a></li>
+<li><a href="https://loremipsum.globrik.com/">Lorem Ipsum Generator<span>Create placeholder text for layouts</span></a></li>
+<li><a href="https://onlinenotepad.globrik.com/">Online Notepad<span>Jot down and keep quick notes</span></a></li>
+<li><a href="https://markdowntohtml.globrik.com/">Markdown to HTML Converter<span>Turn Markdown into clean HTML</span></a></li>
+</ul>
+</section>
+</article>
+</main>
+<footer>
+<div class="w">
+<ul>
+<li><a href="https://sites.google.com/view/globriklegal/privacy-policy">Privacy Policy</a></li>
+<li><a href="https://sites.google.com/view/globriklegal/terms-of-use">Terms</a></li>
+<li><a href="https://sites.google.com/view/globriklegal/contact">Contact</a></li>
+<li><a href="https://sites.google.com/view/globriklegal/about">About</a></li>
+</ul>
+<p>Disclaimer: Counts are estimates and may differ from other tools. Check the rules of the platform or recipient for any official limit, and use only text you own or have the right to use.</p>
+<p>Last updated: November 2026 &middot; &copy; 2026 Globrik</p>
+</div>
+</footer>
+<script>
+(function(){
+var st=document.getElementById('status');
+try{
+var $=function(i){return document.getElementById(i)};
+var ta=$('txt'),fileIn=$('file'),timer=null,sumTimer=null,MAX=2*1024*1024;
+var HAS=/[\p{L}\p{N}]/u;
+var STOP={};
+('the and for are but not you all any can had her was one our out has have this that with from they will would there their what about which when your them then than into been were more some could other these those also just like over such only very most much many does did its his she him how why who whom yet too off per via').split(' ').forEach(function(w){STOP[w]=1});
+var LIMITS=[['X post',280],['Meta title',60],['Meta description',155],['Text message',160],['Instagram caption',2200]];
+
+function say(m,e){st.textContent=m;st.className=e?'err':'ok'}
+function nf(n){return n.toLocaleString('en-US')}
+function fmt(sec){
+if(sec<1)return '0 sec';
+if(sec<60)return Math.round(sec)+' sec';
+var m=Math.floor(sec/60),s=Math.round(sec%60);
+if(s===60){m++;s=0}
+if(m>=60){var h=Math.floor(m/60);m=m%60;return h+' hr'+(m?' '+m+' min':'')}
+return m+' min'+(s?' '+s+' sec':'');
+}
+function speed(el,def,min,max){var n=parseFloat(el.value);if(isNaN(n)||n<min)return def;return Math.min(n,max)}
+
+function analyze(){
+var v=ta.value;
+var tokens=v.split(/\s+/).filter(function(t){return HAS.test(t)});
+var words=tokens.length;
+var chars=Array.from(v).length;
+var nosp=Array.from(v.replace(/\s/g,'')).length;
+var lineArr=v?v.split(/\r\n|\r|\n/):[];
+var lines=lineArr.length;
+var paras=lineArr.filter(function(l){return HAS.test(l)}).length;
+var sent=v.replace(/([.!?\u2026]+["'\u201D\u2019)\]]*)(\s+|$)/g,'$1\u0001').split('\u0001').filter(function(s){return HAS.test(s)}).length;
+var letters=0,longest='';
+tokens.forEach(function(t){
+var core=t.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu,'');
+letters+=(core.match(/[\p{L}\p{N}]/gu)||[]).length;
+if(Array.from(core).length>Array.from(longest).length)longest=core;
+});
+var rw=speed($('wpmR'),200,50,1000),sw=speed($('wpmS'),130,50,400);
+$('s-words').textContent=nf(words);
+$('s-chars').textContent=nf(chars);
+$('s-nosp').textContent=nf(nosp);
+$('s-sent').textContent=nf(sent);
+$('s-para').textContent=nf(paras);
+$('s-lines').textContent=nf(lines);
+$('s-read').textContent=fmt(words/rw*60);
+$('s-speak').textContent=fmt(words/sw*60);
+$('s-avg').textContent=words?(letters/words).toFixed(1):'0';
+$('s-long').textContent=longest||'-';
+limits(chars);
+keywords(v,words);
+clearTimeout(sumTimer);
+sumTimer=setTimeout(function(){$('sum').textContent=nf(words)+' words and '+nf(chars)+' characters.'},900);
+}
+function limits(chars){
+var ul=$('lim');
+while(ul.firstChild)ul.removeChild(ul.firstChild);
+LIMITS.forEach(function(L){
+var li=document.createElement('li'),a=document.createElement('span'),b=document.createElement('span');
+a.textContent=L[0]+' ('+nf(L[1])+')';
+if(chars>L[1]){b.textContent='Over by '+nf(chars-L[1]);b.className='over'}
+else b.textContent=nf(L[1]-chars)+' left';
+li.appendChild(a);li.appendChild(b);ul.appendChild(li);
+});
+}
+function keywords(v,total){
+var box=$('kw'),map={};
+var ws=v.toLowerCase().match(/[\p{L}\p{N}]+(?:['\u2019][\p{L}\p{N}]+)*/gu)||[];
+ws.forEach(function(w){if(Array.from(w).length>=3&&!STOP[w]&&!/^\d+$/.test(w))map[w]=(map[w]||0)+1});
+var arr=Object.keys(map).filter(function(k){return map[k]>=2}).map(function(k){return[k,map[k]]})
+.sort(function(a,b){return b[1]-a[1]||a[0].localeCompare(b[0])}).slice(0,10);
+while(box.firstChild)box.removeChild(box.firstChild);
+if(!arr.length){
+var p=document.createElement('p');p.className='hint';
+p.textContent='Words used at least twice appear here, with common filler words left out.';
+box.appendChild(p);return;
+}
+var tb=document.createElement('table'),th=document.createElement('thead'),tr=document.createElement('tr');
+['Word','Uses','Share'].forEach(function(h){var c=document.createElement('th');c.textContent=h;tr.appendChild(c)});
+th.appendChild(tr);tb.appendChild(th);
+var body=document.createElement('tbody');
+arr.forEach(function(r){
+var row=document.createElement('tr');
+[r[0],nf(r[1]),(r[1]/total*100).toFixed(1)+'%'].forEach(function(t){var c=document.createElement('td');c.textContent=t;row.appendChild(c)});
+body.appendChild(row);
+});
+tb.appendChild(body);box.appendChild(tb);
+}
+function update(){
+try{analyze()}catch(e){say('Something went wrong while counting. Please try again.',true)}
+}
+function schedule(){clearTimeout(timer);timer=setTimeout(update,ta.value.length>200000?250:60)}
+
+ta.addEventListener('input',schedule);
+$('wpmR').addEventListener('input',update);
+$('wpmS').addEventListener('input',update);
+
+$('paste').addEventListener('click',function(){
+if(!navigator.clipboard||!navigator.clipboard.readText||!window.isSecureContext){
+say('One-click paste is blocked here. Click the box and press Ctrl+V (Cmd+V on a Mac).',true);ta.focus();return;
+}
+navigator.clipboard.readText().then(function(t){
+if(!t){say('Your clipboard is empty.',true);return}
+ta.value=t;update();say('Pasted text from your clipboard.');
+},function(){say('Paste was blocked. Click the box and press Ctrl+V (Cmd+V on a Mac).',true);ta.focus()});
+});
+function fallbackCopy(){
+try{
+ta.focus();ta.select();
+var ok=document.execCommand('copy');
+say(ok?'Text copied to clipboard.':'Your browser blocked copying. Select the text and copy it manually.',!ok);
+}catch(e){say('Your browser blocked copying. Select the text and copy it manually.',true)}
+}
+$('copy').addEventListener('click',function(){
+var v=ta.value;
+if(!v){say('There is no text to copy yet.',true);return}
+if(navigator.clipboard&&window.isSecureContext){
+navigator.clipboard.writeText(v).then(function(){say('Text copied to clipboard.')},fallbackCopy);
+}else fallbackCopy();
+});
+$('dl').addEventListener('click',function(){
+try{
+var v=ta.value;
+if(!v){say('There is no text to download yet.',true);return}
+var blob=new Blob([v],{type:'text/plain;charset=utf-8'});
+var url=URL.createObjectURL(blob),a=document.createElement('a');
+a.href=url;a.download='my-text.txt';
+document.body.appendChild(a);a.click();document.body.removeChild(a);
+setTimeout(function(){URL.revokeObjectURL(url)},1000);
+say('Download started: my-text.txt');
+}catch(e){say('Download failed in this browser. Use Copy text instead.',true)}
+});
+$('reset').addEventListener('click',function(){
+ta.value='';fileIn.value='';$('wpmR').value=200;$('wpmS').value=130;update();say('Cleared. Ready for new text.');ta.focus();
+});
+
+function loadFile(f){
+if(!f)return;
+if(f.size>MAX){say('That file is larger than 2 MB. Please use a smaller text file.',true);return}
+var okName=/\.(txt|md|csv|json|html?)$/i.test(f.name),okType=/^text\//.test(f.type)||f.type==='application/json';
+if(!okName&&!okType){say('Unsupported file type. Use .txt, .md, .csv, .json or .html. For Word or PDF files, copy the text and paste it here.',true);return}
+var r=new FileReader();
+r.onload=function(){
+var t=String(r.result||'');
+if(t.indexOf('\u0000')!==-1){say('This file does not look like plain text, so it was not loaded.',true);return}
+if(!t.trim()){say('That file is empty.',true);return}
+ta.value=t;update();say('Loaded '+f.name+'.');
+};
+r.onerror=function(){say('Could not read that file. It may be corrupted.',true)};
+r.readAsText(f);
+}
+$('pick').addEventListener('click',function(){fileIn.click()});
+fileIn.addEventListener('change',function(){loadFile(fileIn.files&&fileIn.files[0]);fileIn.value=''});
+['dragenter','dragover'].forEach(function(ev){ta.addEventListener(ev,function(e){e.preventDefault();ta.classList.add('over')})});
+['dragleave','drop'].forEach(function(ev){ta.addEventListener(ev,function(e){e.preventDefault();ta.classList.remove('over')})});
+ta.addEventListener('drop',function(e){
+var f=e.dataTransfer&&e.dataTransfer.files&&e.dataTransfer.files[0];
+if(f)loadFile(f);
+});
+update();
+}catch(err){
+if(st){st.textContent='This tool could not start in your browser. Please try an up-to-date browser.';st.className='err'}
+}
+})();
+</script>
+</body>
+</html>
